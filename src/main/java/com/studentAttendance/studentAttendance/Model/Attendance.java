@@ -1,12 +1,13 @@
-package Model;
+package com.studentAttendance.studentAttendance.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.apache.catalina.User;
 
 import java.util.Date;
 
+//lombok annotation, creates getters, setters, toString(), hashCode() methods
 @Data
+//makes class a database table
 @Entity(name = "attendance")
 public class Attendance {
 
@@ -18,6 +19,7 @@ public class Attendance {
     @JoinColumn(name = "subjectId")
     private Educator SubjectId;
 
+//specifies the actual name of the column in the database table
     @Column(nullable = false)
     private String StudentName;
 
